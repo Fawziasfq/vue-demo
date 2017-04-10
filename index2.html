@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue demo</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<span v-once>Message:{{message}}</span>
+	<div v-html="rawHtml"></div>
+	<div v-bind:id="dynamicId">hello</div>
+	<button v-bind:disabled="someDynamicCondition">Button</button>
+	<p v-if="seen">Now you see me</p>
+	<a :href="url">www.baidu.com</a>
+	<a @click="doSomething">hello</a>
+	<form v-on:submit.prevent="onSubmit">submit</form>
+</div>
+
+
+
+
+<script src="js/2.js"></script>
+</body>
+</html>
