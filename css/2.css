@@ -1,0 +1,9 @@
+.static{
+	font-size: 20px;
+}
+.active{
+	color:red;
+}
+.text-danger{
+	font-weight: bold;
+}
