@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/3.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app-1">
+	<button v-on:click="counter += 1">增加 1</button>
+	<p>这个按钮被点击了{{counter}}次</p>
+</div>
+
+<div id="app-2">
+	<button v-on:click="greet">Greet</button>
+</div>
+
+<div id="app-3">
+	<button v-on:click="say('hi')">Say hi</button>
+	<button v-on:click="say('what')">Say hello</button>
+</div>
+
+<div id="app-4">
+	<button v-on:click="warn('Form cannot be submitted yet.',$event)">Submit</button>
+</div>
+
+
+
+<!-- 表单控件绑定 -->
+<div id="app-6">
+	<input v-model="message" placeholder="edit me">
+	<p>Message is : {{message}}</p>
+</div>
+
+<!-- 多行文本 -->
+<div id="app-7">
+	<span>Multiline message is:</span>
+	<p style="white-space: pre">{{message}}</p>
+	<br>
+	<textarea v-model="message" placeholder="add multiple lines" ></textarea>
+</div>
+<!-- 单选框 -->
+<div id="app-8">
+	<input type="checkbox" id="checkbox" v-model="checked">
+	<label for="checkbox">{{checked}}</label>
+</div>
+
+<script src="js/4.js"></script>
+</body>
+</html>

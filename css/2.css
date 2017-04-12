@@ -7,3 +7,15 @@
 .text-danger{
 	font-weight: bold;
 }
+.baz{
+	font-size: 20;
+}
+.foo{
+	font-weight: bold;
+}
+.baz{
+	color: blue;
+}
+.boo{
+	background: pink;
+}
