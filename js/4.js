@@ -54,10 +54,63 @@ var app7 = new Vue({
 			message: ''
 		}
 	})
-	//单选框
-var checkbox = new Vue({
-	el: 'checkbox',
+	//复选框
+var app8 = new Vue({
+	el: '#app-8',
 	data: {
-		checked: ''
+		checked: 'true'
+	}
+})
+
+var app9 = new Vue({
+		el: '#app-9',
+		data: {
+			checkedNames: []
+		}
+	})
+	// 单选按钮
+var app10 = new Vue({
+		el: '#app-10',
+		data: {
+			picked: ''
+		}
+	})
+	// 单选列表
+var app11 = new Vue({
+		el: '#app-11',
+		data: {
+			selected: null
+		}
+	})
+	// 多选列表
+var app12 = new Vue({
+		el: '#app-12',
+		data: {
+			selected: []
+		}
+	})
+	//动态选项用for渲染
+var app13 = new Vue({
+		el: '#app-13',
+		data: {
+			selected: 'A',
+			options: [{
+				text: 'One',
+				value: 'A'
+			}, {
+				text: 'Two',
+				value: 'B'
+			}, {
+				text: 'Three',
+				value: 'C'
+			}]
+		}
+	})
+	// .number
+var app15 = new Vue({
+	el: '#app-15',
+	data: {
+		age: '',
+		msg: ''
 	}
 })

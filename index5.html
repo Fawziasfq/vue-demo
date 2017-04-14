@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件</title>
+	<link rel="stylesheet" href="css/3.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app-1">
+	<my-component></my-component>
+</div>
+<!-- 局部注册 -->
+<div id="app-2">
+	<my-component2></my-component2>
+</div>
+<!-- DOM模板解析说明 -->
+
+<div id="app-3">
+	<table>
+		<tr is="my-row"></tr>
+	</table>
+</div>
+
+<!-- data必须是函数 -->
+<div id="app-4">
+	<simple-counter></simple-counter>
+	<simple-counter></simple-counter>
+	<simple-counter></simple-counter>
+</div>
+
+<!-- 通过prop传递数据 -->
+<div id="app-5">
+	<child message="hello"></child>
+</div>
+
+<!-- HTML不区分大小写，所以用短横线隔开 -->
+<div id="app-6">
+	<child2 my-message="hello!"></child2>
+</div>
+
+<!-- 动态props -->
+<div id="app-7">
+	<input v-model="parentMsg">
+	<br>
+	<child3 my-message="parentMsg"></child3>
+</div>
+<script src="js/5.js"></script>
+</body>
+</html>
