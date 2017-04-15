@@ -35,16 +35,33 @@
 </div>
 
 <!-- HTML不区分大小写，所以用短横线隔开 -->
-<div id="app-6">
+<!-- <div id="app-6">
 	<child2 my-message="hello!"></child2>
-</div>
-
-<!-- 动态props -->
+</div> -->
+<!-- 字面量语法vs动态语法 -->
+<!-- 单项数据流 -->
+<!-- 使用v-on绑定自定义事件 -->
 <div id="app-7">
-	<input v-model="parentMsg">
-	<br>
-	<child3 my-message="parentMsg"></child3>
+	<p>{{total}}</p>
+	<button-counter v-on:increment="incrementTotal"></button-counter>
+	<button-counter v-on:increment="incrementTotal"></button-counter>
 </div>
+<!-- 给组件绑定原生事件 -->
+<!-- <div id="app-8">
+	<my-component3 v-on:click.native="doTheThing"></my-component3>
+</div> -->
+<!-- 使用自定义事件的表单输入组件 -->
+<!-- <div id="app-9">
+	<currency-input v-model="price"></currency-input>
+</div> -->
+
+<!-- 非父子组件通信 -->
+<!-- 使用Slot分发内容 -->
+<!-- 编译作用域 -->
+
+
+
+
 <script src="js/5.js"></script>
 </body>
 </html>
