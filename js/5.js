@@ -55,20 +55,101 @@ var app5 = new Vue({
 })
 
 //HTML不区分大小写，所以HTML中用短横线隔开，js中使用驼峰式
-Vue.component('child2', {
-	props: ['my-message'],
-	template: '<span>{{myMessage}}</span>'
-})
+// Vue.component('child2', {
+// 	props: ['my-message'],
+// 	template: '<span>{{myMessage}}</span>'
+// })
 
-var app6 = new Vue({
-		el: '#app-6'
-	})
-	// 动态props
-Vue.component('child3', {
-	props: ['myMessage'],
-	template: '<span>{{myMessage}}</span>'
+// var app6 = new Vue({
+// 		el: '#app-6'
+// 	})
+// prop验证
+
+// Vue.component('example', {
+// 	props: {
+// 		propA: Number,
+// 		propB: [String, Number],
+// 		propC: {
+// 			type: String,
+// 			required: true
+// 		},
+// 		propD: {
+// 			type: Number,
+// 			default: 100
+// 		},
+// 		propE: {
+// 			type: Object,
+// 			default: function() {
+// 				return {
+// 					message: 'hello'
+// 				}
+// 			},
+// 			propF: {
+// 				validator: function(value) {
+// 					return value > 10
+// 				}
+// 			}
+// 		}
+// 	}
+// })
+
+Vue.component('button-counter', {
+	template: '<button v-on:click="increment">{{counter}}</button>',
+	data: function() {
+		return {
+			counter: 0
+		}
+	},
+	methods: {
+		increment: function() {
+			this.counter += 1
+			this.$emit('increment')
+		}
+	},
 })
 
 var app7 = new Vue({
-	el: '#app-7'
+	el: '#app-7',
+	data: {
+		total: 0
+	},
+	methods: {
+		incrementTotal: function() {
+			this.total += 1
+		}
+	}
 })
+
+// 使用自定义事件的表单输入组件
+// Vue.component('currency-input', {
+// 	template: '\
+// 	<span>\
+// 	$\
+// 	<input\
+// 	ref="input"\
+// 	v-bind:value="value"\
+// 	v-on:input="updateValue($event.target.value)"\
+// 	>\
+// 	</span>\
+// 	',
+// 	props: ['value'],
+// 	methods: {
+// 		//不是直接更新值，而是直接使用此方法来对输入值进行格式化和位数限制
+// 		updateValue: function(value) {
+// 			var formattedValue = value
+// 				//删除两侧的空格符
+// 				.trim()
+// 				//保留2位小数位
+// 				.slice(0, value.indexOf('.') + 3)
+// 				//如果值不同意，手动覆盖以保持一致
+// 			if (formattedValue !== value) {
+// 				this.$refs.input.value = formattedValue
+// 			}
+// 			//通过input事件发出数值
+// 			this.$emit('input', Number(formattedValue))
+// 		}
+// 	}
+// })
+// var app9 = new Vue({
+// 	el: '#app-9'
+// })
